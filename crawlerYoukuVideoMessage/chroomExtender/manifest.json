@@ -1,0 +1,15 @@
+{
+  "name": "crawlerYoukuVideoMessage",
+  "manifest_version": 1,
+  "version": "1.0",
+  "description": "use localhost server and chrome extender crawler youku video message",
+  "browser_action": {
+    "default_icon": "1.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*.*.*"],
+      "js": ["script.js"]
+    }
+  ]
+}
