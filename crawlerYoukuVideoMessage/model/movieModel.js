@@ -1,13 +1,15 @@
 var mongoose =require("mongoose")
 var MovieSchema=new mongoose.Schema({
-	doctor:String,
 	title:String,
-	language:String,
-	country:String,
+	doctor:String,
+	//language:String,
+	actors:String,
+	region:String,
 	summary:String,
 	flash:String,
 	poster:String,
 	year:Number,
+	times:Number,
 	meta:{
 		createAt:{
 			type:Date,
