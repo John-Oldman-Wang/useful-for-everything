@@ -19,8 +19,6 @@ app.get('/saveMessage',function(req,res) {
 		}
 	})
 })
-
-app.locals.countNextUrl=0
 app.get('/nextUrl',function(req,res) {
 	YoukuMovieUrl.find({})
 	res.end()
