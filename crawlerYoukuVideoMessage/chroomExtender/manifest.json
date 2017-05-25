@@ -1,6 +1,6 @@
 {
   "name": "crawlerYoukuVideoMessage",
-  "manifest_version": 1,
+  "manifest_version": 3,
   "version": "1.0",
   "description": "use localhost server and chrome extender crawler youku video message",
   "browser_action": {
@@ -8,7 +8,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*.*.*"],
+      "matches": ["http://*.youku.com/*"],
       "js": ["script.js"]
     }
   ]
