@@ -1,6 +1,7 @@
 var mongoose =require("mongoose")
 var youkuMovieUrlSchema=new mongoose.Schema({
 	url:String,
+	did:Boolean,
 	meta:{
 		createAt:{
 			type:Date,
