@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>movielist</title>
+</head>
+<body>
+	<ul>
+		<% for(var i=0;i<movies.length;i++){%>
+			<li>
+				<a href="/watch/<%= movies[i]._id %>"><img src="<%= movies[i].poster%>"></a>
+				<h3><%= movies[i].title %></h3>
+				<p>
+					<%= movies[i].summary %>
+				</p>
+				<p>
+					<%= movies[i].actors %>
+				</p>
+			</li>
+		<%}%>
+	</ul>
+</body>
+</html>
