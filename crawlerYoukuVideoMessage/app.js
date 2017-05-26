@@ -23,6 +23,7 @@ app.get('/saveMessage',function(req,res) {
 		}
 	})
 })
+<<<<<<< HEAD
 app.get('/movielist',function(req,res) {
 	Movie.find({},function(err,movies) {
 		res.render('list.ejs',{
@@ -42,6 +43,8 @@ app.get('/watch/:movieid',function(req,res) {
 	})
 })
 app.locals.countNextUrl=0
+=======
+>>>>>>> 68a9d9af5ef0c3b607d1bf32b80fcdb3d2b37238
 app.get('/nextUrl',function(req,res) {
 	YoukuMovieUrl.find({})
 	res.end()
