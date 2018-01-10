@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>intersectionObserver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html,body{
+            width:100%;
+            height: 100%
+        }
+        div{
+            width: 800px;
+            height: 100%;
+        }
+        .red{
+            background: red;
+        }
+        .green{
+            background: green;
+        }
+        .yellow{
+            background: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="scrollerFooter yellow"></div>
+    <div class="scrollerFooter red"></div>
+    <div class="scrollerFooter green"></div>
+    <div class="scrollerFooter yellow"></div>
+    <div class="scrollerFooter red"></div>
+    <script>
+        
+        
+
+        function observe(ele,mes){
+            var intersectionObserver = new IntersectionObserver(function (entries) {
+                //If intersectionRatio is 0, the target is out of view
+                //and we do not need to do anything
+                if (entries[0].intersectionRatio <= 0) return;
+
+                //loadItems(10);
+                console.log(entries)
+                console.log(mes||'Loaded new items');
+            });
+            // start observing
+            intersectionObserver.observe(ele)
+            return intersectionObserver
+        }
+        var items = document.getElementsByClassName('scrollerFooter')
+        console.log( observe(items.item(0),"a")  )
+        observe(items.item(2),"b");
+        observe(items.item(4),"c");
+    </script>
+</body>
+</html>
