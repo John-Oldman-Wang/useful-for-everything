@@ -1,0 +1,31 @@
+{
+  "name": "jsx-htm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "babel src --out-dir dist",
+    "commonjs": "babel --config-file ./babel.common.config.js dist --out-dir dist-c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@impjs/babel-plugin-transform-jsx-to-template-literals": "0.0.1-alpha.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-transform-jsx-to-htm": "^2.0.0"
+  },
+  "dependencies": {
+    "htm": "^3.0.4",
+    "preact": "^10.4.7",
+    "preact-render-to-string": "^5.1.10",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "vhtml": "^2.2.0"
+  }
+}
