@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navigator-sendBeacon</title>
+  </head>
+  <body>
+    <form action="#">
+      <label for="input">
+        <input id="input" type="text" name="content" />
+      </label>
+      <button type="submit">提交发送</button>
+    </form>
+    <div class="result"></div>
+    <script>
+      const resultDiv = document.querySelector(".result");
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        // POST请求 header 头会根据传递的数据类型设定
+        const result = navigator.sendBeacon("http://10.95.173.174:3333/", fd);
+        // result 总是true 即使网络断开 适用于极端情况埋点发送
+        resultDiv.appendChild(
+          document.createTextNode(result)
+        );
+      });
+    </script>
+  </body>
+</html>
