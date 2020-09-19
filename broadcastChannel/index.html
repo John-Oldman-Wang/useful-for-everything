@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BroadasetChannel</title>
+  </head>
+  <body>
+    <div>BroadasetChannel</div>
+    <input type="text" name="data" id="data" />
+    <button id="btn">postMessage</button>
+    <script>
+      const btn = document.querySelector("#btn");
+      const input = document.querySelector("#data");
+      const channel = new BroadcastChannel("some-key");
+      channel.addEventListener("message", (e) => {
+        console.log(e);
+      });
+      btn.addEventListener("click", () => {
+        if (input.value) {
+          console.log("postMessage", input.value);
+          channel.postMessage(input.value);
+        }
+      });
+    </script>
+  </body>
+</html>
