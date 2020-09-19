@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>storage-event-test</title>
+  </head>
+  <body>
+    <div>window event:storage</div>
+    <input type="text" id="key" name="key" />
+    <input type="text" id="value" name="value" />
+    <button id="btn">add</button>
+    <script>
+      window.addEventListener("storage", (event) => {
+        console.log(event);
+      });
+      const keyInput = document.querySelector("#key");
+      const valueInput = document.querySelector("#value");
+      document.querySelector("#btn").addEventListener("click", () => {
+        if (keyInput.value && valueInput.value) {
+          console.log("localStorage setItem");
+          localStorage.setItem(keyInput.value, keyInput.value);
+        }
+      });
+    </script>
+  </body>
+</html>
